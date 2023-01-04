@@ -59,16 +59,18 @@ local Admin_Button_4 = Instance.new("TextButton")
 local UICorner_10 = Instance.new("UICorner")
 local Admin_Button_5 = Instance.new("TextButton")
 local UICorner_11 = Instance.new("UICorner")
+local Admin_Button_5_2 = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
 local SCRIPTS_Page = Instance.new("ScrollingFrame")
 local ABOUT_Page = Instance.new("Frame")
 local Avatar_Icon = Instance.new("ImageLabel")
-local UICorner_12 = Instance.new("UICorner")
+local UICorner_13 = Instance.new("UICorner")
 local About_Label_1 = Instance.new("TextLabel")
 local VerisonLabel = Instance.new("TextLabel")
 local Welcome_Label = Instance.new("TextLabel")
 local Close_Button = Instance.new("TextButton")
 
-----//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////----
+--Properties:
 
 ClowingAround.Name = "Clowing Around???"
 ClowingAround.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -158,12 +160,12 @@ Background_Holder.Size = UDim2.new(0, 580, 0, 301)
 
 ADMIN_Page.Name = "ADMIN_Page"
 ADMIN_Page.Parent = Background_Holder
+ADMIN_Page.Active = true
 ADMIN_Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ADMIN_Page.BackgroundTransparency = 1.000
 ADMIN_Page.BorderColor3 = Color3.fromRGB(27, 42, 53)
 ADMIN_Page.BorderSizePixel = 0
 ADMIN_Page.Size = UDim2.new(0, 580, 0, 301)
-ADMIN_Page.Visible = false
 ADMIN_Page.ScrollBarThickness = 7
 
 Admin_Button_1.Name = "Admin_Button_1"
@@ -235,6 +237,19 @@ Admin_Button_5.TextSize = 20.000
 
 UICorner_11.Parent = Admin_Button_5
 
+Admin_Button_5_2.Name = "Admin_Button_5"
+Admin_Button_5_2.Parent = ADMIN_Page
+Admin_Button_5_2.BackgroundColor3 = Color3.fromRGB(153, 153, 153)
+Admin_Button_5_2.Position = UDim2.new(0.237931043, 0, 0.436544955, 0)
+Admin_Button_5_2.Size = UDim2.new(0, 302, 0, 21)
+Admin_Button_5_2.Modal = true
+Admin_Button_5_2.Font = Enum.Font.Roboto
+Admin_Button_5_2.Text = "Vynixius"
+Admin_Button_5_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Admin_Button_5_2.TextSize = 20.000
+
+UICorner_12.Parent = Admin_Button_5_2
+
 SCRIPTS_Page.Name = "SCRIPTS_Page"
 SCRIPTS_Page.Parent = Background_Holder
 SCRIPTS_Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -245,12 +260,14 @@ SCRIPTS_Page.Size = UDim2.new(0, 580, 0, 301)
 SCRIPTS_Page.Visible = false
 SCRIPTS_Page.ScrollBarThickness = 7
 
+ABOUT_Page.Archivable = false
 ABOUT_Page.Name = "ABOUT_Page"
 ABOUT_Page.Parent = Background_Holder
 ABOUT_Page.Active = true
 ABOUT_Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ABOUT_Page.BackgroundTransparency = 1.000
 ABOUT_Page.Size = UDim2.new(0, 580, 0, 301)
+ABOUT_Page.Visible = false
 
 Avatar_Icon.Name = "Avatar_Icon"
 Avatar_Icon.Parent = ABOUT_Page
@@ -260,8 +277,8 @@ Avatar_Icon.Position = UDim2.new(0.0672413707, 0, 0.210963458, 0)
 Avatar_Icon.Size = UDim2.new(0, 150, 0, 150)
 Avatar_Icon.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
 
-UICorner_12.CornerRadius = UDim.new(1, 1)
-UICorner_12.Parent = Avatar_Icon
+UICorner_13.CornerRadius = UDim.new(1, 1)
+UICorner_13.Parent = Avatar_Icon
 
 About_Label_1.Name = "About_Label_1"
 About_Label_1.Parent = ABOUT_Page
@@ -318,7 +335,7 @@ Close_Button.TextWrapped = true
 
 -- Scripts:
 
-local function HXWKLXZ_fake_script() -- ABOUT_BUTTON.About_Handler 
+local function QQDB_fake_script() -- ABOUT_BUTTON.About_Handler 
 	local script = Instance.new('LocalScript', ABOUT_BUTTON)
 
 	local button = script.Parent
@@ -334,8 +351,8 @@ local function HXWKLXZ_fake_script() -- ABOUT_BUTTON.About_Handler
 		Admin_Page.Active = false ----///// Means disappears :))))
 	end)
 end
-coroutine.wrap(HXWKLXZ_fake_script)()
-local function HLMHMME_fake_script() -- SCRIPTS_Button.Scripts_Handler 
+coroutine.wrap(QQDB_fake_script)()
+local function JHZRVFR_fake_script() -- SCRIPTS_Button.Scripts_Handler 
 	local script = Instance.new('LocalScript', SCRIPTS_Button)
 
 	local button = script.Parent
@@ -351,8 +368,8 @@ local function HLMHMME_fake_script() -- SCRIPTS_Button.Scripts_Handler
 		Admin_Page.Active = false
 	end)
 end
-coroutine.wrap(HLMHMME_fake_script)()
-local function YLQS_fake_script() -- ADMINS_Buttons.Admin_Handler 
+coroutine.wrap(JHZRVFR_fake_script)()
+local function DXSTKE_fake_script() -- ADMINS_Buttons.Admin_Handler 
 	local script = Instance.new('LocalScript', ADMINS_Buttons)
 
 	local button = script.Parent
@@ -368,8 +385,8 @@ local function YLQS_fake_script() -- ADMINS_Buttons.Admin_Handler
 		About_Page.Visible = false
 	end)
 end
-coroutine.wrap(YLQS_fake_script)()
-local function UAJMD_fake_script() -- Admin_Button_1.Handler 
+coroutine.wrap(DXSTKE_fake_script)()
+local function SWPOPGM_fake_script() -- Admin_Button_1.Handler 
 	local script = Instance.new('LocalScript', Admin_Button_1)
 
 	local Button = script.Parent
@@ -382,8 +399,17 @@ local function UAJMD_fake_script() -- Admin_Button_1.Handler
 		})
 	end)
 end
-coroutine.wrap(UAJMD_fake_script)()
-local function SUDE_fake_script() -- Avatar_Icon.LocalScript 
+coroutine.wrap(SWPOPGM_fake_script)()
+local function QIRL_fake_script() -- Admin_Button_5_2.Button_Handler 
+	local script = Instance.new('LocalScript', Admin_Button_5_2)
+
+	local Button= script.Parent
+	Button.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Prison%20Life/Script.lua"))()
+	end)
+end
+coroutine.wrap(QIRL_fake_script)()
+local function GDUZPYX_fake_script() -- Avatar_Icon.LocalScript 
 	local script = Instance.new('LocalScript', Avatar_Icon)
 
 	----//// Thanks for reading it, nothing special loser <3
@@ -395,8 +421,8 @@ local function SUDE_fake_script() -- Avatar_Icon.LocalScript
 	
 	Avatar_Holder.Image = Players:GetUserThumbnailAsync(Player.UserId,Enum.ThumbnailType.AvatarBust,Enum.ThumbnailSize.Size420x420)
 end
-coroutine.wrap(SUDE_fake_script)()
-local function AWRX_fake_script() -- Main_Holder.Main_Handler 
+coroutine.wrap(GDUZPYX_fake_script)()
+local function KUWZCZ_fake_script() -- Main_Holder.Main_Handler 
 	local script = Instance.new('LocalScript', Main_Holder)
 
 	UIS = game:GetService("UserInputService")
@@ -436,4 +462,4 @@ local function AWRX_fake_script() -- Main_Holder.Main_Handler
 	local Welcome_User = script.Parent.Welcome_Label
 	Welcome_User.Text = "Welcome, " ..Player.Name
 end
-coroutine.wrap(AWRX_fake_script)()
+coroutine.wrap(KUWZCZ_fake_script)()
